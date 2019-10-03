@@ -1,0 +1,17 @@
+Z:\Documentos\FIAP\AM\Am\Am\Am\bin\Debug\netstandard2.0\Am.deps.json
+Z:\Documentos\FIAP\AM\Am\Am\Am\bin\Debug\netstandard2.0\Am.dll
+Z:\Documentos\FIAP\AM\Am\Am\Am\bin\Debug\netstandard2.0\Am.pdb
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\App.xaml.g.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Am.csproj.CoreCompileInputs.cache
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Am.AssemblyInfoInputs.cache
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Am.AssemblyInfo.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Am.dll
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Am.pdb
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Views\PrincipalPage.xaml.g.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Views\PrincipalPageMaster.xaml.g.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Views\PessoaFisicaPage.xaml.g.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Views\PessoaJuridicaPage.xaml.g.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Am.csprojAssemblyReference.cache
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\XamlC.stamp
+Z:\Documentos\FIAP\AM\Am\Am\Am\obj\Debug\netstandard2.0\Views\RelatorioPage.xaml.g.cs

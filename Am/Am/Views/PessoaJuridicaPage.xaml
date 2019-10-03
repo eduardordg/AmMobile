@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Am.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Am.Views.PessoaJuridicaPage"
+             Title="Pessoa Jurídica - Investigação">
+
+    <ContentPage.BindingContext>
+        <vm:PessoaJuridicaViewModel></vm:PessoaJuridicaViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,30,0,0">
+                <Entry Placeholder="Digite o CNPJ"  FontSize="Title" Text="{Binding Cnpj}" VerticalOptions="Start" Margin="10,20,10,40"></Entry>
+                <Label Text="Base de dados" VerticalOptions="Start" FontSize="Title" TextColor="Black" Margin="120,0,10,30"></Label>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+
+
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"  />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="INFOSEG" VerticalOptions="Start" Grid.Row="0" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Infoseg}" VerticalOptions="Start" Grid.Row="0" Grid.Column="5"/>
+
+                    <Label Text="ARISP" VerticalOptions="Start" Grid.Row="1" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Arisp}" VerticalOptions="Start" Grid.Row="1" Grid.Column="5"/>
+
+                    <Label Text="CADESP" VerticalOptions="Start" Grid.Row="2" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Cadesp}" VerticalOptions="Start" Grid.Row="2" Grid.Column="5"/>
+
+                    <Label Text="JUCESP" VerticalOptions="Start" Grid.Row="3" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Jucesp}" VerticalOptions="Start" Grid.Row="3" Grid.Column="5"/>
+
+                    <Label Text="ARPENSP" VerticalOptions="Start" Grid.Row="4" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Arpensp}" VerticalOptions="Start" Grid.Row="4" Grid.Column="5"/>
+
+                    <Label Text="VEC" VerticalOptions="Start" Grid.Row="5" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Vec}" VerticalOptions="Start" Grid.Row="5" Grid.Column="5"/>
+
+                    <Label Text="TRE/SP" VerticalOptions="Start" Grid.Row="6" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Tre}" VerticalOptions="Start" Grid.Row="6" Grid.Column="5"/>
+
+                    <Label Text="CAGED" VerticalOptions="Start" Grid.Row="7" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Caged}" VerticalOptions="Start" Grid.Row="7" Grid.Column="5"/>
+
+                    <Label Text="CENSEC" VerticalOptions="Start" Grid.Row="8" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Censec}" VerticalOptions="Start" Grid.Row="8" Grid.Column="5"/>
+
+                    <Label Text="INFOCRIM" VerticalOptions="Start" Grid.Row="9" Grid.Column="1"></Label>
+                    <Switch  IsToggled="{Binding Infocrim}" VerticalOptions="Start" Grid.Row="9" Grid.Column="5"/>
+
+
+
+                </Grid>
+
+                <Button Text="Pesquisar" Margin="130,10,130,30" VerticalOptions="Center" Command="{Binding PesquisarClickedCommand}"></Button>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

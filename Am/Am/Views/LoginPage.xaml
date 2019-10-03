@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+ xmlns="http://xamarin.com/schemas/2014/forms"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ xmlns:vm="clr-namespace:Am.ViewModels"
+ x:Class="Am.Views.LoginPage" Title="Login">
+
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Investigação App - MPSP" FontSize="Title" TextColor="Black" HorizontalOptions="Center" Margin="0,0,0,50" ></Label>
+            <Entry Placeholder="Usuário" x:Name="EntryUsuario" Margin="20,10,20,10" Text="{Binding User}" ></Entry>
+            <Entry Placeholder="Senha" x:Name="EntrySenha" Margin="20,10,20,10" Text="{Binding Password}" IsPassword="True"></Entry>
+            <Button Text="Entrar" Margin="60,30,60,0" Command="{Binding EntrarClickedCommand}" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
