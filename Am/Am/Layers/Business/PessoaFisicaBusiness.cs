@@ -18,7 +18,7 @@ namespace Am.Layers.Business
         }
 
 
-        //public PessoaFisicaData getData() ??
+        
 
     }
 }

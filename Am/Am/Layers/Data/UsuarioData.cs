@@ -8,6 +8,7 @@ namespace Am.Layers.Data
     public class UsuarioData
     {
 
+        //Nosso aplicativo até então não está usando Banco de dados
       
             
     }

@@ -25,25 +25,41 @@ namespace Am.ViewModels
 
                 var usuarioBusiness = new UsuarioBusiness();
 
-                DependencyService.Get<IMessage>().ShortAlert(user+"\n"+password);
-                //MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
+                //Validações para login 
+                //Em breve vou refatorar esse grupo de validações em um método :)
 
 
+                if (String.IsNullOrEmpty(user) == false)
+                {
+                    if (String.IsNullOrEmpty(password) == false)
+                    {
 
-                if (usuarioBusiness.GetLogin(user, password) == true)
+                        if (usuarioBusiness.GetLogin(user, password) == true)
+                        {
+
+                            MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
+                            DependencyService.Get<IMessage>().ShortAlert("Bem vindo senhor(a) Investigador(a)");
+                            
+
+                        }
+                        else
+                        {
+
+                            DependencyService.Get<IMessage>().ShortAlert("Acesso inválido - Dados incorretos");
+                        }
+
+                    }
+                    else
+                    {
+
+                        DependencyService.Get<IMessage>().ShortAlert("Por favor digite a sua senha");
+                    }
+                }
+                else
                 {
 
-                    MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
-                    DependencyService.Get<IMessage>().ShortAlert("Bem vindo senhor(a) Investigador(a)");
-                    //mandar msg mensagem center
-
+                    DependencyService.Get<IMessage>().ShortAlert("Por favor digite o seu usuário");
                 }
-                else {
-
-                    DependencyService.Get<IMessage>().ShortAlert("Acesso inválido - Dados incorretos");
-                }
-
-
 
 
             });

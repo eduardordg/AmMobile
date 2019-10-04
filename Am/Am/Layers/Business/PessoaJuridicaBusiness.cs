@@ -20,6 +20,6 @@ namespace Am.Layers.Business
         }
 
 
-        //public PessoaJuridicaData getData() ???
+        
     }
 }

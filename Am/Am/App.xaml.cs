@@ -14,18 +14,14 @@ namespace Am
         {
             InitializeComponent();
 
-            // Método Interno que carrega variáveis (Objetos) Globais
-
-
-            // var a = new Layers.Data.InvestidorData();
-
-            // Definindo se deve apresentar tela de login ou ir para tela principal
+           
+            //  Comentários para facilitar a escolha da MainPage
 
             // MainPage = new Am.Views.RelatorioPage();
 
-            // MainPage = new Am.Views.LoginPage();
+             MainPage = new Am.Views.LoginPage();
 
-            MainPage = new Am.Views.PrincipalPage();
+          //  MainPage = new Am.Views.PrincipalPage();
 
 
         }

@@ -1,5 +1,6 @@
 ﻿using Am.Layers.Business;
 using Am.Layers.Services;
+using Am.Models;
 using Am.Views.Components;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,11 @@ namespace Am.ViewModels
 
             PesquisarClickedCommand = new Command(() => {
 
-
-                //AGORA PRECISA VALIDAR SE OS SWITCH TÃO TRUE PRA AJUDAR MOSTRAR NA TELA SÓ DETERMINADOS TIPOS DE DADOS
-
                 var pessoaFisicaBusiness = new PessoaFisicaBusiness(); //instancia business para acessar a service
                 var service = pessoaFisicaBusiness.getService(); //atribuiu o objeto service a uma variavel para fazer as chamadas das API dentros dos IF conforme resultados dos Switchs
                 var relatorio = new RelatorioViewModel(); // instancia relatorio para envio das informações para a tela
 
-
+                //validação CPF NULO
                 if(String.IsNullOrEmpty(cpf) == true)
                 {
 
@@ -35,7 +33,7 @@ namespace Am.ViewModels
                 }
 
                 else {
-
+                    //Validação todos Switchs Nulos
                     if (infoseg == false && arisp == false && cadesp == false && jucesp == false && arpensp == false && vec == false && tre == false && caged == false && censec == false && infocrim == false)
                     {
                         DependencyService.Get<IMessage>().ShortAlert("Por favor selecione ao menos uma base de dados para consulta");
@@ -47,10 +45,12 @@ namespace Am.ViewModels
                         if (infoseg == true)
                         {
 
-                            string dadosEncontrados;
-                            dadosEncontrados = service.getInfoseg(cpf);
-                            DependencyService.Get<IMessage>().ShortAlert(dadosEncontrados);
-                            relatorio.Resultado += dadosEncontrados; // BUG NÃO TA CHEGANDO NA TELAAAAAA CORRIGIR
+                            string dadosEncontrados; //variavel para receber dados
+                            dadosEncontrados = service.getInfoseg(cpf); //envio dos dados que a instancia da service conseguiu
+                            relatorio.Resultado += dadosEncontrados; // soma-se ao valor que já há no resultado
+                            GlobalViewModel.Relatorio = relatorio;// manda os dados para a global, fazendo a RelatorioViewModel enxergar
+
+                            //mesma coisa acontece nos 9 restantes itens ifs abaixo
 
                         }
 
@@ -59,6 +59,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getArisp(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (cadesp == true)
@@ -66,6 +67,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getCadesp(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (jucesp == true)
@@ -73,6 +75,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getJucesp(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (arpensp == true)
@@ -80,6 +83,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getArpensp(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (vec == true)
@@ -87,6 +91,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getVec(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (tre == true)
@@ -94,6 +99,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getTre(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (caged == true)
@@ -101,6 +107,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getCaged(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (censec == true)
@@ -108,6 +115,7 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getCensec(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         if (infocrim == true)
@@ -115,36 +123,13 @@ namespace Am.ViewModels
                             string dadosEncontrados;
                             dadosEncontrados = service.getInfocrim(cpf);
                             relatorio.Resultado += dadosEncontrados;
+                            GlobalViewModel.Relatorio = relatorio;
                         }
 
                         MessagingCenter.Send<PessoaFisicaViewModel>(this, "RelatorioPageAbrir");
 
                     }
                 }
-
-
-
-                //Instanciando business para acessar a service e pegar dados da api
-                // string testeApi = pessoaFisicaBusiness.getService().GetDados(cpf); //Enviando cpf digitado na tela para busca na api
-
-                //var str = Infoseg.ToString()+"\n";
-                //str += Arisp.ToString() + "\n";
-                //str += Cadesp.ToString() + "\n";
-                //str += Jucesp.ToString() + "\n";
-                //str += Arpensp.ToString() + "\n";
-                //str += Vec.ToString() + "\n";
-                //str += Tre.ToString() + "\n";
-                //str += Caged.ToString() + "\n";
-                //str += Censec.ToString() + "\n";
-                //str += Infocrim.ToString() + "\n";
-
-
-                // DependencyService.Get<IMessage>().ShortAlert(str);
-
-                //  DependencyService.Get<IMessage>().ShortAlert(testeApi);
-
-
-
 
             });
 

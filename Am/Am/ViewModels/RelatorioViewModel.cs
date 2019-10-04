@@ -1,4 +1,5 @@
-﻿using Am.Views.Components;
+﻿using Am.Models;
+using Am.Views.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,17 @@ namespace Am.ViewModels
 
         public RelatorioViewModel()
         {
-
-
+            //Validação para passagem dos dados da GlobalViewModel para a RelatorioViewModel
+            if ( GlobalViewModel.Relatorio != null)
+            {
+                this.Resultado = GlobalViewModel.Relatorio.Resultado;
+                GlobalViewModel.Relatorio = null;
+            }
            
-            // resultado = "Nome : Antonio Jacinto Wesley \n\nData de nascimento : 18/04/1980 \n\nEndereço: Rua dos bobos nº0 \n\nRG: 12345679-X \n\nTelefone: (11) 4002-8922 \n\nEmail: abc@abc.com.br \n\nEmpregado em: - \n\nSocio na(s) empresa(s): PAGSEGURO \n\nCNPJ: 12345678910 \n\nContador: Wellington Muniz \n\nTítulo de Eleitor: 12345678910 \n\nLocal de votação: Rua Ari Toledo 123 - São Paulo - SP \n\nLocal de multas: Rua Arti 5454 - Niterói, RJ";
-            //resultado = "Infelizmente não encontramos nenhuma informação";
         }
 
 
-
+        //declaração de atributo
         private string resultado;
         public string Resultado
         {
@@ -31,16 +34,12 @@ namespace Am.ViewModels
                
                     resultado = value;
                     NotifyPropertyChanged();
-                
+               
+
             }
         }
 
-        public void receberDadosCpf(string dadosEncontrados) {
-
-            resultado = dadosEncontrados;
-            DependencyService.Get<IMessage>().ShortAlert(resultado);
-
-        }
+       
 
 
         public event PropertyChangedEventHandler PropertyChanged;

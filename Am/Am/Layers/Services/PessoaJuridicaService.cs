@@ -9,90 +9,83 @@ namespace Am.Layers.Services
    public class PessoaJuridicaService
     {
 
-        public string getAll(string cnpj)
-        {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
-
-            return dados;
-        }
-
+        //Mock de chamadas da api, enquanto ela não fica pronta :)
         public string getInfoseg(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para INFOSEG OK :) \n\n";
 
             return dados;
         }
 
         public string getArisp(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para ARISP OK :) \n\n";
 
             return dados;
         }
 
         public string getCadesp(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para CADESP OK :) \n\n";
 
             return dados;
         }
 
         public string getJucesp(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para JUCEPS OK :) \n\n";
 
             return dados;
         }
 
         public string getArpensp(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para ARPENSP OK :) \n\n";
 
             return dados;
         }
 
         public string getVec(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para VEC OK :) \n\n";
 
             return dados;
         }
 
         public string getTre(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para TRE OK :) \n\n";
 
             return dados;
         }
 
         public string getCaged(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para CAGED OK :) \n\n";
 
             return dados;
         }
 
         public string getCensec(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para CENSEC OK :) \n\n";
 
             return dados;
         }
 
         public string getInfocrim(string cnpj)
         {
-            string uri;
-            string dados = "Chegando até a chamada da API de Pessoa Fisica :)";
+            //string uri;
+            string dados = "Resposta da API para INFOCRIM OK :) \n\n";
 
             return dados;
         }
